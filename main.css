@@ -13,7 +13,7 @@ body {
 
 main {
     height: calc(100% - 100px);
-    background-color: brown;
+    background-color: rgb(16, 19, 25);
     width: 100%;
     /* margin-bottom: 100px; */
 }
@@ -27,7 +27,7 @@ main::after {
 footer {
     height: 100px;
     width: 100%;
-    background-color: black;
+    background-color: rgb(40, 40, 40);
     position: relative;
 }
 
@@ -35,19 +35,20 @@ footer {
     float: left;
     height: 100%;
     width: 200px;
+    background-color: #000;
     /* min-height: 500px; */
 }
 
 .sidebar-top {
-    height: calc(100% - 80px);
-    background-color: blue;
+    height: calc(100% - 80px - 80px);
     width: 100%;
 }
 
 .sidebar-bottom {
     height: 80px;
     width: 100%;
-    background-color: yellow;
+    background-color: #000;
+    z-index: 999;
 }
 
 .container {
@@ -55,6 +56,129 @@ footer {
     height: 100%;
     margin-left: 200px;
     overflow-y: auto;
+}
+
+/*REGOLE PER LA SIDEBAR*/
+/*regole per il logo*/
+#logo {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img {
+    width: 60%;
+}
+/*regole per sidebar-top*/
+.sidebar-top li {
+    padding: 8px 0px;
+}
+
+.sidebar-top ul {
+    list-style: none;
+}
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+}
+
+.links ul li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.links ul li img {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.links ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.playlist {
+    margin-left: 15px;
+}
+
+.sidebar-top .playlist h3 {
+    color: #fff;
+    padding: 5px 0px;
+}
+
+.sidebar-top .playlist a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-top .playlist i {
+    color: #000;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-top .playlists li {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.playlist .playlists {
+    overflow-y: auto;
+}
+
+/*regole per sidebar-bottom*/
+.sidebar-bottom {
+    padding: 5px 15px;
+}
+
+.install-app, .profile {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-bottom .install-app {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-bottom .profile{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-bottom .install-app img {
+    width: 15px;
+    height: 15px;
+}
+
+.sidebar-bottom .profile img {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+}
+/*REGOLE PER CALL TO ACTION*/
+.container .cta {
+    width: 100%;
+    height: 80px;
+    background-color:rgba(0, 0, 0, 0.3);
+    text-align: right;
+    line-height: 80px;
+    padding-right: 10px;
+}
+
+.cta .upgrade a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 /*REGOLE PER IL NAV-MAIN*/
@@ -109,6 +233,7 @@ ul.flex.row-links {
 
 .img-container img {
     width: 100%;
+    object-fit: cover;
 }
 
 .img-container {
@@ -150,7 +275,7 @@ ul.flex.row-links {
 
 .round {
     border-radius: 50%;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /*stilizzazione testi main*/
@@ -182,6 +307,11 @@ footer .flex-container {
     height: 100%;
     width: 100%;
 }
+
+.flex-sx, .flex-center, .flex-dx {
+    flex-shrink: 0;
+}
+
 /* footer sx */
 footer .flex-sx {
     justify-content: center;
@@ -218,6 +348,14 @@ footer .play-title {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.heart i:hover {
+    color: #fff;
+}
+
+.folder i:hover {
+    color: #fff;
+}
+
 .heart, .folder {
     margin-right: 10px;
 }
@@ -237,7 +375,11 @@ footer .flex-center {
 
 .flex-center .center-top i {
     color: #fff;
-    padding: 0 30px;
+    margin: 0 30px;
+}
+
+.flex-center .center-top i:hover {
+    cursor: pointer;
 }
 
 .big-one {
