@@ -36,7 +36,7 @@ footer {
     height: 100%;
     width: 200px;
     background-color: #000;
-    /* min-height: 500px; */
+    /* min-height: 412px; */
 }
 
 .sidebar-top {
@@ -63,13 +63,24 @@ footer {
 #logo {
     display: flex;
     height: 80px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 15px;
 }
 
 #logo img {
     width: 60%;
 }
+
+#small-logo {
+    display: none;
+}
+
+#small-logo img {
+    width: 30px;
+    height: 30px;
+}
+
 /*regole per sidebar-top*/
 .sidebar-top li {
     padding: 8px 0px;
@@ -88,12 +99,21 @@ footer {
     display: flex;
     align-items: center;
     width: 100%;
+    padding-left: 15px;
+}
+
+.links ul #home a:hover, .links ul #search a:hover, .links ul #mylibrary a:hover  {
+    color: #fff;
+}
+
+.links ul #home:hover, .links ul #search:hover, .links ul #mylibrary:hover {
+    border-left: #93dd25 2px solid;
 }
 
 .links ul li img {
     width: 20px;
     height: 20px;
-    margin-left: 15px;
+    /* margin-left: 15px; */
     margin-right: 5px;
 }
 
@@ -104,6 +124,7 @@ footer {
 
 .playlist {
     margin-left: 15px;
+    /* overflow: hidden; */
 }
 
 .sidebar-top .playlist h3 {
@@ -122,17 +143,29 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+.sidebar-top .playlist a:hover {
+    color: #fff
+}
+
+.sidebar-top .playlist a:hover .fa-plus {
+    background-color: #fff;
+}
+
 .sidebar-top .playlists li {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.playlist .playlists {
+.playlists {
     overflow-y: auto;
+    margin-left: 15px;
 }
 
+.playlists li:hover {
+    color: #fff;
+}
 /*regole per sidebar-bottom*/
 .sidebar-bottom {
-    padding: 5px 15px;
+    padding: 15px;
 }
 
 .install-app, .profile {
@@ -143,6 +176,7 @@ footer {
 .sidebar-bottom .install-app {
     color: rgba(255, 255, 255, 0.5);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 5px;
 }
 
 .sidebar-bottom .profile{
@@ -160,6 +194,10 @@ footer {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
     border-radius: 50%;
+}
+
+.sidebar-bottom .profile p {
+    color: #fff;
 }
 /*REGOLE PER CALL TO ACTION*/
 .container .cta {
@@ -181,6 +219,10 @@ footer {
     font-size: 13px;
 }
 
+.cta .upgrade a:hover {
+    padding: 7px 21px;
+}
+
 /*REGOLE PER IL NAV-MAIN*/
 main nav {
     width: 100%;
@@ -192,6 +234,7 @@ main nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .nav-main ul li a {
@@ -244,7 +287,7 @@ ul.flex.row-links {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
+    bottom: 4px;
     left: 0;
     background-color: rgba(255, 255, 255, 0.5);
     display: flex;
@@ -332,6 +375,11 @@ footer .flex-sx {
 footer .play-title {
     flex-direction: column;
     margin-right: 20px;
+}
+
+footer .play-title div:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .play-title h3 {
@@ -456,4 +504,81 @@ footer .flex-dx {
 
 .flex-dx .progress-lines {
     width: 40%;
+}
+
+
+/*RESPONSIVE*/
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .row-item {
+        width: calc(100% / 4 - 10px);
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    .row-item {
+        width: calc(100% / 2 - 10px);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .row-item {
+        width: calc(100% / 2 - 10px);
+    }
+
+    .sidebar {
+        width: 40px;
+    }
+
+    .container {
+        width: calc(100% - 40px);
+        margin-left: 0;
+    }
+
+    .playlist {
+        display: none;
+    }
+
+    .playlists {
+        display: none;
+    }
+
+    .sidebar-top .links a {
+        display: none;
+    }
+
+    .links ul li img {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .links ul li {
+        justify-content: center;
+    }
+
+    #small-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    .sidebar-bottom .install-app {
+        border-bottom: 0px;
+    }
+
+    .sidebar-bottom p {
+        display: none;
+    }
+
+    .sidebar-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }
