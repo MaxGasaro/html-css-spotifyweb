@@ -28,7 +28,8 @@ footer {
     height: 100px;
     width: 100%;
     background-color: rgb(40, 40, 40);
-    position: relative;
+    position: fixed;
+    bottom: 0;
 }
 
 .sidebar {
@@ -36,7 +37,7 @@ footer {
     height: 100%;
     width: 200px;
     background-color: #000;
-    /* min-height: 412px; */
+    min-height: 412px;
 }
 
 .sidebar-top {
@@ -353,7 +354,7 @@ footer .flex-container {
 }
 
 .flex-sx, .flex-center, .flex-dx {
-    flex-shrink: 0;
+    flex-shrink: 1;
 }
 
 /* footer sx */
@@ -519,6 +520,10 @@ footer .flex-dx {
     .row-item {
         width: calc(100% / 2 - 10px);
     }
+
+    footer .play-title, .heart, .folder, footer .flex-dx i.fa-tv, footer .flex-dx i.fa-volume-up, footer .flex-dx .minutes-lines {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 575px) {
@@ -548,11 +553,13 @@ footer .flex-dx {
     }
 
     .links ul li img {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 0;
+        margin-right: 0;
     }
-
+    
     .links ul li {
+        padding-left: 0px;
+        padding-right: 0px;
         justify-content: center;
     }
 
@@ -581,5 +588,9 @@ footer .flex-dx {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+    }
+
+    footer .play-title, .heart, .folder, footer .flex-dx i.fa-tv, footer .flex-dx i.fa-volume-up, footer .flex-dx .minutes-lines, footer .flex-center .center-top i.fa-random, footer .flex-center .center-top i.fa-redo {
+        display: none;
     }
 }
